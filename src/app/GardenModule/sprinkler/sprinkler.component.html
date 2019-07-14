@@ -1,0 +1,18 @@
+<div *ngIf="sprinkler" appCollapse>
+  <div class="row">
+    <h5 #collapseCtrl class="col-11">Sprinkler {{sprinkler.sprinklerData.id}}</h5>
+    <i class="material-icons center" aria-hidden="true" (click)="onMinusClick()">delete</i>
+  </div>
+
+  <div class="row">
+    <div #collapseCollapse class="col-12">
+      <ul class="list-group">
+          <li class="list-group-item">
+            <label for="status" >Status: </label>
+            <app-editable-label [text]='sprinkler.sprinklerData.status' (textChange)='changeStatus($event)'></app-editable-label>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

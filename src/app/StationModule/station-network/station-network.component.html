@@ -1,0 +1,18 @@
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{network.SSID}}</mat-panel-title>
+    <mat-panel-description>Network Info</mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">RSSI: {{network.RSSI}}</mat-list-item>
+    <mat-list-item role="listitem">BSSID: {{network.BSSID}}</mat-list-item>
+    <mat-list-item role="listitem">Encryption Type: {{network.encryptionType}}</mat-list-item>
+    <mat-list-item role="listitem">Channel: {{network.channel}}</mat-list-item>
+    <mat-list-item role="listitem">Auto Connect: {{network.autoConnect}}</mat-list-item>
+    <mat-list-item role="listitem">Password: {{network.password}}</mat-list-item>
+  </mat-list>
+
+</mat-expansion-panel>
+

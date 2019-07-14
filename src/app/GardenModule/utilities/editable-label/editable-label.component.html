@@ -1,0 +1,5 @@
+
+<div>
+  <h5> <span class="form-control-label is-valid " for="span1" #label (dblclick)='onClick()'>{{text}}</span></h5>
+  <input [(ngModel)]='text' type="text" #textBox hidden class="form-control " (blur)='onBlur()'>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="program" appCollapse>
+
+  <div class='row'>
+    <div #collapseCtrl class="col-11">
+      <app-editable-label  [text]='program.simpleProgramData.name' (textChange)='changeName($event)'></app-editable-label>
+    </div>
+    <i class="material-icons center" aria-hidden="true" (click)="onMinusClick()">delete</i>
+  </div>
+
+  <div #collapseCollapse>
+    <ul class="list-group">
+        <li class="list-group-item"><label for="id">Id: </label>{{program.simpleProgramData.id}}</li>
+        <li class="list-group-item"><app-time-pattern [timePattern]="program.timePattern" [programId]="program.simpleProgramData.id"></app-time-pattern></li>
+    </ul>
+  </div>
+</div>

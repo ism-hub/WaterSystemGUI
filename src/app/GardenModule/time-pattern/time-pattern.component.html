@@ -1,0 +1,23 @@
+
+
+<!--expandable-list-item item [isExpanded]="timePattern.timePatternViewModel.isExpanded" (onExpanded)="listExpandedChanged($event)">
+	<span title>Time Pattern</span>
+	<app-day-list item [days]="timePattern.days" [programId]="programId"></app-day-list>
+</expandable-list-item> -->
+
+<div appCollapse >
+
+
+  <div class='row'>
+    <h5 #collapseCtrl class="col-11">Time Pattern</h5>
+    <i class="material-icons center" aria-hidden="true" (click)="addNewDay()">add</i>
+  </div>
+
+  <div #collapseCollapse class="col-12">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let day of timePattern.days; index as i;trackBy:getKey">
+            <app-day [day]="day" [programId]="programId"></app-day>
+        </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+
+<div class="row">
+  <label class="col-1">hour:</label> <app-editable-label class='col-2' [text]='hour.hourData.hour' (textChange)='changeHour($event, "hour")'></app-editable-label>
+  <label class="col-1">min:</label> <app-editable-label class='col-2' [text]='hour.hourData.min' (textChange)='changeHour($event, "min")'></app-editable-label>
+  <label class="col-2">duration:</label> <app-editable-label class='col-2' [text]='hour.hourData.duration' (textChange)='changeHour($event, "duration")'></app-editable-label>
+  <i class="material-icons center col-1" aria-hidden="true" (click)="deleteHour()">delete</i>
+</div>

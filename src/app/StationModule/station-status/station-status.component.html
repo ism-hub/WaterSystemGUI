@@ -1,0 +1,31 @@
+<div class="basic-container">
+    <mat-card>
+      <mat-card-header *ngIf="stationStatus.view.isLoading; else notLoading">
+        <div mat-card-avatar class="header-loading" ></div>
+        <mat-card-title>Loading...
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-title>
+        <mat-card-subtitle>Station Status</mat-card-subtitle>
+      </mat-card-header>
+      <ng-template #notLoading>
+        <mat-card-header>
+          <div mat-card-avatar  [ngClass]="stationStatus.data.isConnected ? 'header-on' : 'header-off'" ></div>
+          <mat-card-title>{{stationStatus.data.isConnected ? "Connected" : "Disconnected"}}</mat-card-title>
+          <mat-card-subtitle>Station Status
+            <mat-error *ngIf="!stationStatus.view.isLoadingSucceeded">Loading Failed.</mat-error>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </ng-template>
+      <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"-->
+      <mat-card-content *ngIf="stationStatus.data.isConnected && !stationStatus.view.isLoading">
+        <mat-list role="list">
+          <mat-list-item role="listitem">IP Address: {{stationStatus.data.localIP}}</mat-list-item>
+        </mat-list>
+        <mat-accordion><app-station-network [network]="stationStatus.data.network"></app-station-network></mat-accordion>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="refreshStatus()">REFRESH</button>
+        <button mat-button *ngIf="stationStatus.data.isConnected" (click)="disconnectFromNetwork()">DISCONNECT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

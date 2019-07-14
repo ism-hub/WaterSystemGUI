@@ -1,0 +1,83 @@
+
+
+
+<div class="basic-container">
+  <mat-card>
+    <mat-card-header *ngIf="accessPointSettings.accessPointSettingsViewModel.isLoading; else notLoading">
+      <div mat-card-avatar><i class="material-icons md-48 md-grad">settings</i></div>
+      <mat-card-title>Loading...
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-title>
+      <mat-card-subtitle>Access Point Settings</mat-card-subtitle>
+    </mat-card-header>
+    <ng-template #notLoading>
+      <mat-card-header>
+        <div mat-card-avatar><i class="material-icons md-48 md-grad">settings</i></div>
+        <mat-card-title>Settings</mat-card-title>
+        <mat-card-subtitle>Access Point Settings
+            <mat-error *ngIf="!accessPointSettings.accessPointSettingsViewModel.isLoadingSucceeded">Loading Failed.</mat-error>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </ng-template>
+    <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"-->
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <mat-form-field>
+            <mat-select placeholder="Provide Access Point When..." [value]="accessPointSettings.accessPointSettingsData.whenOn"  (valueChange)='whenOnChange($event)'  >
+              <!--mat-option [value]="0">--</mat-option-->
+              <mat-option *ngFor="let animal of whenStationOnOptions" [value]="animal.id">
+                {{animal.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item role="listitem">
+        <mat-form-field>
+          <input matInput placeholder="SSID" value="{{accessPointSettings.accessPointSettingsData.ssid}}" (change)="ssidChange($event.target.value)">
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item role="listitem">
+        <mat-form-field>
+          <input matInput placeholder="PASSWORD" value="{{accessPointSettings.accessPointSettingsData.password}}" (change)="passwordChange($event.target.value)">
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item role="listitem">
+        <mat-form-field>
+          <input matInput placeholder="LOCAL_IP" value="{{accessPointSettings.accessPointSettingsData.localIP}}" (change)="localIPChange($event.target.value)">
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item role="listitem">
+        <mat-form-field>
+          <input matInput placeholder="GATEWAY" value="{{accessPointSettings.accessPointSettingsData.gateway}}" (change)="gatewayChange($event.target.value)">
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item role="listitem">
+        <mat-form-field>
+          <input matInput placeholder="SUBNET" value="{{accessPointSettings.accessPointSettingsData.subnet}}" (change)="subnetChange($event.target.value)">
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item role="listitem">
+        <mat-form-field>
+          <input matInput placeholder="REST_API_PATH" value="{{accessPointSettings.accessPointSettingsData.apConfigRestAPIPath}}" (change)="restAPIPathChange($event.target.value)">
+        </mat-form-field>
+      </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button (click)="saveSettings()">SAVE</button>
+      <button mat-button (click)="resetSettings()">RESET</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+

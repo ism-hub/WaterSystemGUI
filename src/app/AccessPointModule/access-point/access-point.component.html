@@ -1,0 +1,8 @@
+<mat-tab-group dynamicHeight mat-stretch-tabs>
+  <mat-tab label="Status">
+    <app-access-point-status [accessPointStatus]='accessPoint.accessPointStatus'></app-access-point-status>
+  </mat-tab>
+  <mat-tab label="Settings">
+    <app-access-point-settings [accessPointSettings]='accessPoint.accessPointSettings'></app-access-point-settings>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,18 @@
+<div appCollapse>
+
+  <div class='row'>
+    <h5 #collapseCtrl class="col-10">Day</h5>
+    <i class="material-icons center col-1" aria-hidden="true" (click)="deleteDay()">delete</i>
+    <i class="material-icons center col-1" aria-hidden="true" (click)="addNewHour()">add</i>
+  </div>
+
+  <div class="row">
+    <div #collapseCollapse class="col-12">
+      <ul class="list-group">
+          <li class="list-group-item" *ngFor="let hour of day.hours; index as i;trackBy:getKey">
+              <app-hour [hour]="hour" [programId]="programId" [dayId]="day.dayData.id"></app-hour>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

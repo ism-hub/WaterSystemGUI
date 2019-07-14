@@ -1,0 +1,44 @@
+
+<div appCollapse>
+  <div class='row'>
+    <div #collapseCtrl class="col-11">
+        <app-editable-label  [text]='plant.plantData.name' (textChange)='changeName($event)'></app-editable-label>
+    </div>
+    <i class="material-icons center" aria-hidden="true" (click)="deletePlant()">delete</i>
+  </div>
+
+  <div class='row' >
+    <div class="collapse col-12" #collapseCollapse>
+      <ul class="list-group">
+          <li class="list-group-item"><label for="id">Id: </label>{{plant.plantData.id}}</li>
+
+          <li class="list-group-item">
+            <app-simple-program [program]="plant.simpleProgram" (minusClick)="removeProgramFromPlant($event)"></app-simple-program>
+            <div *ngIf="!plant.simpleProgram" class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Programs
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation" *ngFor="let program of garden.simplePrograms; index as i" >
+                  <a role="menuitem" tabindex="-1" (click)='setProgram(program)'>{{program.simpleProgramData.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <app-sprinkler [sprinkler]="plant.sprinkler" (minusClick)='removeSprinklerFromPlant($event)'></app-sprinkler>
+            <div *ngIf="!plant.sprinkler" class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Sprinklers
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation" *ngFor="let sprinkler of garden.sprinklers; index as i" >
+                  <a role="menuitem" tabindex="-1"  (click)='setSprinkler(sprinkler)'>Sprinkler {{sprinkler.sprinklerData.id}}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

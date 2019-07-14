@@ -1,0 +1,14 @@
+.header-off {
+  background: linear-gradient(rgb(255, 0, 0), rgb(114, 8, 8));
+  background-size: cover;
+}
+
+.header-on {
+  background: linear-gradient(rgb(21, 255, 0), rgb(17, 114, 8));
+  background-size: cover;
+}
+
+.header-loading {
+  background: linear-gradient(rgb(21, 255, 0), rgb(255, 0, 0));
+  background-size: cover;
+}

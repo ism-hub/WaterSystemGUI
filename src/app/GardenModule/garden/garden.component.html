@@ -1,0 +1,16 @@
+<div class='row'>
+  <app-editable-label class='col-10' [text]='garden.gardenData.name' (textChange)='changeName($event)' data-toggle="collapse" data-target="#gardenList"></app-editable-label>
+  <i class="material-icons col-1"  aria-hidden="true" (click)='refreshGarden()'>refresh</i>
+  <i class="material-icons col-1"  aria-hidden="true" (click)='saveGarden()'>save</i>
+</div>
+
+
+<div class='row'>
+  <div class="collapse col-12" id="gardenList">
+    <ul class="list-group">
+        <li class="list-group-item"><app-plant-list [plants]='garden.plants' [isExpanded]='garden.gardenViewModel.isPlantsListExpanded'></app-plant-list></li>
+        <li class="list-group-item"><app-simple-program-list [programs] = "garden.simplePrograms"></app-simple-program-list></li>
+        <li class="list-group-item"><app-sprinkler-list [isExpanded]="garden.gardenViewModel.isSprinklersListExpanded" [sprinklers]="garden.sprinklers"></app-sprinkler-list></li>
+    </ul>
+  </div>
+</div>

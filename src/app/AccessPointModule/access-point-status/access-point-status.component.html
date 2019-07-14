@@ -1,0 +1,33 @@
+
+
+<div class="basic-container">
+  <mat-card>
+    <mat-card-header *ngIf="accessPointStatus.accessPointStatusViewModel.isLoading; else notLoading">
+      <div mat-card-avatar class="header-loading" ></div>
+      <mat-card-title>Loading...
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-title>
+      <mat-card-subtitle>Access Point Status</mat-card-subtitle>
+    </mat-card-header>
+    <ng-template #notLoading>
+      <mat-card-header>
+        <div mat-card-avatar  [ngClass]="accessPointStatus.accessPointStatusData.isOn ? 'header-on' : 'header-off'" ></div>
+        <mat-card-title>{{accessPointStatus.accessPointStatusData.isOn ? "On" : "Off"}}</mat-card-title>
+        <mat-card-subtitle>Access Point Status
+          <mat-error *ngIf="!accessPointStatus.accessPointStatusViewModel.isLoadingSucceeded">Loading Failed.</mat-error>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </ng-template>
+    <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"-->
+    <mat-card-content>
+      <mat-list role="list" *ngIf="accessPointStatus.accessPointStatusData.isOn && !accessPointStatus.accessPointStatusViewModel.isLoading">
+        <mat-list-item role="listitem">IP Address: {{accessPointStatus.accessPointStatusData.ipAddress}}</mat-list-item>
+        <mat-list-item role="listitem">MAC Address: {{accessPointStatus.accessPointStatusData.macAddress}}</mat-list-item>
+        <mat-list-item role="listitem">Currently connected devices: {{accessPointStatus.accessPointStatusData.numOfConnectedStations}}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="refreshStatus()">REFRESH</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

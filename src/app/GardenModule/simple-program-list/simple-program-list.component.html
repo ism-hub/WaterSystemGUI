@@ -1,0 +1,14 @@
+<div class='row'>
+  <h5 data-toggle="collapse" data-target="#programsList" class='col-11'>Programs</h5>
+  <i class="material-icons center" aria-hidden="true" (click)="addNewProgram()">add</i>
+</div>
+
+<div class="row">
+  <div class="collapse col-12" id="programsList">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let program of programs;trackBy:getKey">
+          <app-simple-program [program]="program" (minusClick)="deleteProgram($event)"></app-simple-program>
+      </li>
+    </ul>
+  </div>
+</div>

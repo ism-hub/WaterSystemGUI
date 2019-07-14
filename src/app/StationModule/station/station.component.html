@@ -1,0 +1,8 @@
+<mat-tab-group dynamicHeight mat-stretch-tabs>
+  <mat-tab label="Status">
+    <app-station-status [stationStatus]="station.stationStatus"></app-station-status>
+  </mat-tab>
+  <mat-tab label="Scanner">
+    <app-station-scanner [stationScanner]="station.stationScanner"></app-station-scanner>
+  </mat-tab>
+</mat-tab-group>
