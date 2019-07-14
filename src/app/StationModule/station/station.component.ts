@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { AppState } from '../../store/app.state';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Station } from '../modles';
 
 @Component({

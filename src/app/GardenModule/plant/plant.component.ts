@@ -4,7 +4,7 @@ import { AppState} from '../../store/app.state';
 import { PlantActionCreator } from './PlantActionCreator';
 import { NgRedux } from '@angular-redux/store';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { GardenActionCreator } from '../garden/GardenActions';
 
 @Component({

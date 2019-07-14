@@ -9,8 +9,8 @@ declare var $: any;
 export class CollapseDirective implements AfterContentInit, AfterViewInit {
 
 
-  @ContentChild('collapseCtrl') collapseCtrl: ElementRef;
-  @ContentChild('collapseCollapse') collapseCollapse: ElementRef;
+  @ContentChild('collapseCtrl', /* TODO: add static flag */ {static: false}) collapseCtrl: ElementRef;
+  @ContentChild('collapseCollapse', /* TODO: add static flag */ {static: false}) collapseCollapse: ElementRef;
 
   @Output() isCollapsedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   private _isCollapsed;

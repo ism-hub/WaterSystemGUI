@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Epic, createEpicMiddleware, combineEpics } from 'redux-observable';
-import { of } from 'rxjs/observable/of';
+import { of ,  Observable } from 'rxjs';
 import 'rxjs/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/switchMap';
+
+
+
+
+
 import { map, filter, mapTo, switchMap, startWith, catchError } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { AnyAction, Action } from 'redux';
@@ -16,7 +16,6 @@ import { GardenAPIService } from './GardenAPIService';
 import { GardenService2GardenModelTranslator } from './GardenService2GardenModelTranslator';
 import { GardenModel2GardenServiceTranslator } from './GardenModel2GardenServiceTranslator';
 import { Action } from 'redux';
-import { Observable } from 'rxjs';
 
 @Injectable()
 export class GardenServiceEpics {

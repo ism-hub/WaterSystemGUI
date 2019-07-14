@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-editable-label',
@@ -8,8 +8,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditableLabelComponent implements OnInit {
 
-  @ViewChild('textBox') textBox1: ElementRef;
-  @ViewChild('label') span1: ElementRef;
+  @ViewChild('textBox', { static: true }) textBox1: ElementRef;
+  @ViewChild('label', { static: true }) span1: ElementRef;
 
   private _text: string;
   @Input()

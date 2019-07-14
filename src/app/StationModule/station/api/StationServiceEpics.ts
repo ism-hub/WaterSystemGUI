@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { combineEpics, ofType } from 'redux-observable';
 import { switchMap, map, catchError, startWith } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
-import { Observable } from 'rxjs';
+import { of ,  Observable } from 'rxjs';
 import { StationService } from './StationService';
 import { StationServiceActionCreator, StationAction } from './StationServiceActionCreator';
 

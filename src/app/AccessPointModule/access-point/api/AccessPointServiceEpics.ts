@@ -3,8 +3,7 @@ import { AccessPointService } from './AccessPointService';
 import { combineEpics, ofType } from 'redux-observable';
 import { AccessPointServiceActionCreator, AccessPointSettingsAction } from './AccessPointServiceActionCreator';
 import { switchMap, map, catchError, startWith } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
-import { Observable } from 'rxjs';
+import { of ,  Observable } from 'rxjs';
 import { AccessPointServer2ServiceTranslator, AccessPointService2ServerTranslator } from './translators';
 
 

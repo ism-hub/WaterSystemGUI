@@ -3,7 +3,7 @@ import { AppState } from '../../store/app.state';
 import { SimpleProgramActionCreator } from './SimpleProgramActionCreator';
 import { NgRedux } from '@angular-redux/store';
 import { Component, OnInit, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-simple-program',

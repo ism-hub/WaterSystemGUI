@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccessPoint } from '../models';
 import { NgRedux } from '@angular-redux/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AppState } from '../../store/app.state';
 
 @Component({

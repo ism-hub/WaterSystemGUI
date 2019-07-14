@@ -4,7 +4,7 @@ import { AppState } from '../../store/app.state';
 import { NgRedux } from '@angular-redux/store';
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { List } from 'immutable';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { PlantData } from '../state/models';
 
 @Component({
