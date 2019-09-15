@@ -49,7 +49,7 @@ Information about the ESP as an Access-Point -
 Can view and change the Access-Point settings -
 ![AP Settings](https://i.imgur.com/MuQt69T.png)
 
-### The Garden View (our moded)
+### The Garden View (our model)
 Can set water programs add flowers etc. (needs a little visual update..)
 ![Garden](https://i.imgur.com/U1g6Mo9.png)
 
