@@ -16,11 +16,11 @@ import { StationServer2ServiceTranslator, Service2StationServerTranslator } from
   SERVICE_BASE: 'http://watersystem/',
 };*/
 const URLS = {
-  GET_STATUS: 'http://192.168.69.1/station/connectionStatus',
-  GET_NEARBYNETWORKS: 'http://192.168.69.1/station/nearbyNetworks',
-  POST_DISCONNECT: 'http://192.168.69.1/station/disconnect',
-  POST_CONNECT: 'http://192.168.69.1/station/connect',
-  SERVICE_BASE: 'http://192.168.69.1/',
+  GET_STATUS: 'http://watersystem.local/station/connectionStatus',
+  GET_NEARBYNETWORKS: 'http://watersystem.local/station/nearbyNetworks',
+  POST_DISCONNECT: 'http://watersystem.local/station/disconnect',
+  POST_CONNECT: 'http://watersystem.local/station/connect',
+  SERVICE_BASE: 'http://watersystem.local/',
 };
 
 @Injectable()

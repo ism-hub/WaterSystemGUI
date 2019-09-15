@@ -12,9 +12,9 @@ import { Observable } from 'rxjs';
 
 // A fake API on the internets.
 const URLS = {
-  GET_GARDEN: 'http://watersystem/',
+  GET_GARDEN: 'http://watersystem.local/',
   // GET_GARDEN: 'http://www.mocky.io/v2/5a925cf13300008100e919fa',
-  SERVER_BASE: 'http://watersystem/',
+  SERVER_BASE: 'http://watersystem.local/',
 };
 
 @Injectable()

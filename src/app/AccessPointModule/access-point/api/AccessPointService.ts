@@ -12,9 +12,9 @@ import { ServerAccessPointStatus, ServerAccessPointSettings } from '../../models
 
 // if below not working try this -
 const URLS = {
-  GET_STATUS: 'http://192.168.69.1/apstatus',
-  GET_SET_SETTINGS: 'http://192.168.69.1/apconfig',
-  SERVICE_BASE: 'http://192.168.69.1/',
+  GET_STATUS: 'http://watersystem.local/apstatus',
+  GET_SET_SETTINGS: 'http://watersystem.local/apconfig',
+  SERVICE_BASE: 'http://watersystem.local/',
 };
 /*
 const URLS = {
